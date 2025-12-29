@@ -119,3 +119,8 @@ const oo = {
 delete oo.age
 
 console.log(oo)
+
+const dum = (function(a) {
+    delete a;
+    return a;
+})(5);
