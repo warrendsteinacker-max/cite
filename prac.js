@@ -220,12 +220,15 @@ function testthis(){
 
  const polyfills = new Object();
 
- polyfills.prototype.myFilter = function(fn, arr){
+ Array.prototype.myFilter = function(fn){
     let aaa = []
-    arr.forEach((item) => {
-        if(fn(item)){
+    this.forEach((item, index) => {
+        if(fn(item, index, this)){
             aaa.push(item)
         }
         else {return}
     })
+    return aaa;
  }
+
+ Array.prototype.myMap = function(fn){}
