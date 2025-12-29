@@ -156,3 +156,19 @@ const objj = {
 
 }
 
+const objjj = {
+    a: 1,
+    b: 2,
+    c: "Hello",
+}
+
+function mulninob(objjj) {
+    for(key in objjj){
+
+        if(objjj[key] === Number){
+            objjj[key] = objjj[key] * 2;
+        }
+
+}
+return objjj;
+}
