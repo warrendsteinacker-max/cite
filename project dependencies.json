@@ -1,0 +1,20 @@
+{
+  "name": "llm-orchestrator-engine",
+  "version": "1.0.0",
+  "description": "A Node.js orchestration engine for multi-stage LLM tasks using the Gemini API.",
+  "main": "server.js",
+  "type": "module",
+  "scripts": {
+    "start:server": "node server.js",
+    "start:client": "node client.js",
+    "start": "npm run start:server & npm run start:client",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "dependencies": {
+    "@google/genai": "^0.16.0",
+    "dotenv": "^16.4.5",
+    "express": "^4.19.2",
+    "inquirer": "^9.2.23",
+    "node-fetch": "^3.3.2"
+  }
+}
