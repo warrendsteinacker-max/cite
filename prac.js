@@ -178,7 +178,11 @@ const bb = "obb"
 
 
 function testthis(){
-    console.log(this)
+    const b = 1
+    return () =>{
+    console.log(this)}
 }
 
-fn.apply(bb)
+ testthis()
+
+
