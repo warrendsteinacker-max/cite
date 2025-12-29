@@ -146,3 +146,13 @@ dd(obj)
     //a: 1,
    // b: 2,}
 
+
+   const firstname = "prop";
+   const fname = me
+
+const objj = {
+
+    [firstname]: "me",
+
+}
+
