@@ -23,3 +23,19 @@ function tcurry(fn) {
 const addCurried = tcurry(add);
 
 addCurried(1)(2) // output will stop and expect another arg for return c part
+
+
+function ttc(fn){
+
+    return function cc(...args) {
+        if(args.length >= fn.length){
+            return fn.apply(this, args)
+        }
+        else{
+            return function(...nextArgs){
+                return cc.apply(this, args.concat(nextArgs))
+            }
+        }
+    }
+}
+
