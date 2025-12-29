@@ -39,3 +39,15 @@ function ttc(fn){
     }
 }
 
+
+function dd(fn, d){
+    let timer;
+
+    return function(...args){
+        clearTimeout(timer);
+
+        timer = setTimeout(() => {
+            fn.apply(this, args)
+        }, d);
+    }
+}
