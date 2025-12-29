@@ -134,4 +134,15 @@ const obj = {
     "key": 3,
 }
 
-console.log(obj["key"])
+function dd(obj){
+    delete obj["key"];
+    console.log(obj)
+    return obj;
+}
+
+dd(obj)
+
+// returns const obj = {
+    //a: 1,
+   // b: 2,}
+
