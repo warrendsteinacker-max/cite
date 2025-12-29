@@ -124,3 +124,14 @@ const dum = (function(a) {
     delete a;
     return a;
 })(5);
+
+
+/// useing keys
+
+const obj = {
+    a: 1,
+    b: 2,
+    "key": 3,
+}
+
+console.log(obj["key"])
