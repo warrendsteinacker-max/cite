@@ -51,3 +51,49 @@ function dd(fn, d){
         }, d);
     }
 }
+
+function tt(fn, d){
+
+    let timer = false
+
+    return function(...args){
+        if(timer) return;
+
+        timer = true;
+
+        setTimeout(()=> {fn.apply(this, args)}, d);
+
+    }
+}
+
+function flat(arr, depth = 1){
+    narr = []
+    arr.forEach((item) => {
+        if(Array.isArray(item) && depth > 1){
+            narr.push(...flat(item, depth - 1))
+        }
+        else{
+            narr.push(item)
+        }
+    })
+
+     return narr;
+}
+
+
+Array.prototype.flat = (arr, depth = 1) => {
+    narr = []
+    arr.forEach((item) => {
+        if(Array.isArray(item) && depth > 1){
+            narr.push(...flat(item, depth - 1))
+        }
+        else{
+            narr.push(item)
+        }
+    })
+
+}
+
+
+
+Array.prototype.flat([1,2,[3,4],5], 2) // [1,2,3,4,5]
