@@ -110,3 +110,12 @@ Array.prototype.filter = function(fn, arr){
 
 
 Array.prototype.flat([1,2,[3,4],5], 2) // [1,2,3,4,5]
+
+const oo = {
+    name: "me",
+    age: 22,
+}
+
+delete oo.age
+
+console.log(oo)
