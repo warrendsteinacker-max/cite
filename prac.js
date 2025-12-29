@@ -22,4 +22,4 @@ function tcurry(fn) {
 
 const addCurried = tcurry(add);
 
-addCurried(1)(2)
+addCurried(1)(2) // output will stop and expect another arg for return c part
