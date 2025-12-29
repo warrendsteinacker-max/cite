@@ -1,8 +1,25 @@
 function tcurry(fn) {
-    return function curried(...args) {
+    return function cur(...args) {
+        if(args.length >= fn.length){
+            return fn.apply(this, args)
+        }
 
+        else{
+
+            return function(...nextArgs){
+
+                return cur.apply(this, args.concat(nextArgs))
+
+            }
+
+        }
+
+    }}
+
+    function add(a,b,c) {
+        return a + b + c;
     }
-    else {
-        return curried()
-    }
-}
+
+const addCurried = tcurry(add);
+
+addCurried(1)(2)
