@@ -85,13 +85,26 @@ Array.prototype.flat = (arr, depth = 1) => {
     narr = []
     arr.forEach((item) => {
         if(Array.isArray(item) && depth > 1){
-            narr.push(...flat(item, depth - 1))
+            narr.push(...item.flat(item, depth - 1))
         }
         else{
             narr.push(item)
         }
     })
 
+    return narr;
+
+}
+
+Array.prototype.filter = function(fn, arr){
+    let aaa = []
+    arr.forEach((item, index) => {
+        if(fn(item, index, arr)){
+            aaa.push(item)
+        }
+        else {return}
+    })
+    return aaa
 }
 
 
