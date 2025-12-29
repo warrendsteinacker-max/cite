@@ -176,13 +176,14 @@ return objjj;
 
 const bb = "obb"
 
+person = {
+    name: "me",
+    age: 22,}
 
 function testthis(){
-    const b = 1
-    return () =>{
-    console.log(this)}
+    console.log(this.name + " is " + this.age);
 }
 
- testthis()
+ testthis.apply(person)
 
 
