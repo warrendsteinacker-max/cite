@@ -165,10 +165,20 @@ const objjj = {
 function mulninob(objjj) {
     for(key in objjj){
 
-        if(objjj[key] === Number){
+        if(typeof objjj[key] === "number"){
             objjj[key] = objjj[key] * 2;
         }
 
 }
 return objjj;
 }
+
+
+const bb = "obb"
+
+
+function testthis(){
+    console.log(this)
+}
+
+fn.apply(bb)
