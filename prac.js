@@ -181,9 +181,15 @@ person = {
     age: 22,}
 
 function testthis(){
-    console.log(this.name + " is " + this.age);
+    n = this.name;
+    a = this.age;
+    return () => {
+    console.log(n + " is " + a);
+}
 }
 
  testthis.apply(person)
+
+ 
 
 
