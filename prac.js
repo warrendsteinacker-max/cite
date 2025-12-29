@@ -190,6 +190,42 @@ function testthis(){
 
  testthis.apply(person)
 
- 
 
 
+
+person = {
+    name: "me",
+    age: 22,
+    testthis: function(){
+        n = this.name;
+        a = this.age;
+        return () => {
+        console.log(n + " is " + a);}
+    }
+}
+
+
+person.testthis()();
+
+function testthis(){
+    n = this.name;
+    a = this.age;
+    return () => {
+    console.log(n + " is " + a);
+}
+}
+
+ testthis.apply(person)
+
+
+ const polyfills = new Object();
+
+ polyfills.prototype.myFilter = function(fn, arr){
+    let aaa = []
+    arr.forEach((item) => {
+        if(fn(item)){
+            aaa.push(item)
+        }
+        else {return}
+    })
+ }
