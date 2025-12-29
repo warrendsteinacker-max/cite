@@ -231,4 +231,29 @@ function testthis(){
     return aaa;
  }
 
- Array.prototype.myMap = function(fn){}
+let ab = [];
+
+this.forEach((item, index) => ab.push(fn(item, index, this)))
+
+return ab;
+
+ Array.prototype.myMap = function(fn){
+
+    let ab = [];
+
+this.forEach((item, index) => ab.push(fn(item, index, this)))
+
+return ab;
+
+ }
+
+ 
+ 
+ 
+ for (var i = 0; i < 3; i++) {
+  setTimeout(() => {
+    console.log(i);
+  }, 1000);
+}
+ 
+ Array.prototype.myReduce = function(fn, initialValue){
