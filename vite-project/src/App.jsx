@@ -12,7 +12,7 @@ function App() {
 
     try{
         e.preventDefault()
-        const d = await axios.post('/login', {password: pass})
+        const d = await axios.post('http://localhost:8000/login', {password: pass})
         const res = d.data
         const R = res.role 
         localStorage.setItem('role', R)
