@@ -25,7 +25,7 @@ app.post('/login', (req, res) => {
 
 app.put('/edit', (req, res) => {
     try{
-        const {Ro, pass, RRR} = req.body
+        const {pass, RRR} = req.body
 
         Users.forEach((U)=> {if(RRR == U.R){U.password = pass}})
         
