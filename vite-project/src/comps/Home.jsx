@@ -3,20 +3,19 @@ import React, {useState} from 'react'
 const Home = () => {
 
     const RRR = localStorage.getItem('role')
-    const [sent, setS] = useState('')
+    const [sent, setS] = useState(false)
     const [M, setM] = useState('')
     const [pass, setPass] = useState('')
 
     const Changep = async(e) => {
-        e.preventDefault
+        e.preventDefault()
         try{
-            const feedback = await axios.put('http://localhost:8000/edit')
+            const feedback = await axios.put('http://localhost:8000/edit', {pass: pass, RRR: RRR})
             const res = feedback.data
             const fB = res.sent 
             localStorage.setItem('feedback', fB)
             setS(true)
-            const Message = localStorage.getItem('feedback')
-            setM(Message)
+            setM(fB)
         }
         catch(error){
             console.error(error.message)
