@@ -6,6 +6,7 @@ const Home = () => {
     const [sent, setS] = useState(false)
     const [M, setM] = useState('')
     const [pass, setPass] = useState('')
+    const [data, setData] = useState([])
 
     const Changep = async(e) => {
         e.preventDefault()
@@ -31,6 +32,7 @@ const Home = () => {
         <input type='password' value={pass} onChange={(e)=>setPass(e.target.value)}></input>
         <button type='submit'>change p</button>
     </form>
+    <div style={{display: flex, justifyContent: center, alignItems: center}}><div>{data.map((item)=>{<p></p>})}</div>
     </>
   )
 }
