@@ -5,24 +5,30 @@ const Home = () => {
     const RRR = localStorage.getItem('role')
     const Message = localStorage.getItem('feedback')
     const [sent, setS] = useState('')
-    const [nsent, setNs] = useState('')
+    const [M, setM] = useState('')
 
     const Changep = async(e) => {
-        e.preventDefualt
+        e.preventDefault
         try{
             const feedback = await axios.put('http://localhost:8000/edit')
             const res = feedback.data
             const fB = res.sent 
             localStorage.setItem('feedback', fB)
-
+            setS(true)
+            const Message = localStorage.getItem('feedback')
+            setM(Message)
         }
         catch(error){
             console.error(error.message)
+            setS(false)
         }
     }
 
   return (
+    <>
+    {sent ? (<p>{M}</p>):(<p>{M}</p>)}
     <p>Welcom {RRR}</p>
+    </>
   )
 }
 
