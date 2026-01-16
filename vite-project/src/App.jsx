@@ -1,4 +1,4 @@
-import Loginp from './c:/Users/User/llm/vite-project/src/Loginp'
+import Loginp from './comps/Loginp.jsx'
 import {Routes, Route} from 'react-router-dom'
 
 function App() {
