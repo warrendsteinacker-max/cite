@@ -49,6 +49,7 @@ const Home = () => {
         <input type='password' value={pass} onChange={(e)=>setPass(e.target.value)}></input>
         <button type='submit'>change p</button>
         <button onClick={fetchd}> fetch d </button>
+        <div style={{display: flex, justifyContent: center, alignItems: center}}><button onClick={fetchd}>fetch d</button><div>{data.map((item)=>{<p></p>})}</div></div>
     </form>
     </>
   )
