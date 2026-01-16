@@ -23,6 +23,12 @@ app.post('/login', (req, res) => {
     }
 })
 
+app.put('/edit', (req, res) => {
+    const {Ro, pass, RRR} = req.body
+
+    Users.forEach((U)=> if(RRR ==))
+})
+
 
 app.listen(8000, () => {
     console.log('server running on 8000')
