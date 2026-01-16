@@ -1,9 +1,29 @@
 import express from 'express'
 import cors from 'cors'
-import Users from '/Users.js'
-import App from '../vite-project/src/App'
+import Users from './Users.js'
 
 const app = express()
 
 app.use(express.json())
-app.use(cors({orgin: '*', }))
+// Backend
+app.use(cors({
+  origin: 'http://localhost:5173', // Change this to your Vite port
+  credentials: true
+}));
+
+app.post('/login', (req, res) => {
+    try{
+        const {password} = req.body
+        const User = Users.find((U)=> password == U.password)
+        return res.status(200).json({role: User.R})
+    }
+    catch(error){
+        console.error(error.message)
+        return res.status(500).json({S: false})
+    }
+})
+
+
+app.listen(8000, () => {
+    console.log('server running on 8000')
+} )

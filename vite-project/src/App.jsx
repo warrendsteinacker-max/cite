@@ -14,7 +14,7 @@ function App() {
         e.preventDefault()
         const d = await axios.post('/login', {password: pass})
         const res = d.data
-        const R = res.data.role 
+        const R = res.role 
         localStorage.setItem('role', R)
         nav('/H')
       }
