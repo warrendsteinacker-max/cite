@@ -2,7 +2,7 @@ import { useState } from 'react'
 import axios from 'axios'
 import {useNavigate} from 'react-router-dom'
 
-function App() {
+function Loginp() {
   
   const [pass, setP] = useState('')
   const nav = useNavigate()
@@ -34,4 +34,4 @@ function App() {
   )
 }
 
-export default App
+export default Loginp
