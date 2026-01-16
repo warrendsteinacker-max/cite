@@ -8,12 +8,21 @@ const Home = () => {
     const [pass, setPass] = useState('')
     const [count, setC] = useState(0)
     const [data, setData] = useState([])
+    // const [E, setE] = useState(false)
 
     const fetchd = async() => {
-        setC(count + 1)
-        const res = await axios.get(`https://jsonplaceholder.typicode.com/posts/${count}`)
-        dataa = res.data
-        setData(...data, dataa)
+       try{
+        const index = count + 1
+        const res = await axios.get(`https://jsonplaceholder.typicode.com/posts/${index}`)
+        const dataa = res.data
+        console.log(dataa)
+        setData([...data, dataa]
+        setC(index)
+        )
+       }
+       catch(error){
+        console.error(error.message)
+       }
     }
 
     const Changep = async(e) => {
@@ -40,7 +49,6 @@ const Home = () => {
         <input type='password' value={pass} onChange={(e)=>setPass(e.target.value)}></input>
         <button type='submit'>change p</button>
     </form>
-    <div style={{display: flex, justifyContent: center, alignItems: center}}><button onClick={fetchd}>fetch d</button><div>{data.map((item)=>{<p></p>})}</div>
     </>
   )
 
@@ -48,4 +56,4 @@ const Home = () => {
 
 export default Home
 
-/////
+/////<div style={{display: flex, justifyContent: center, alignItems: center}}><button onClick={fetchd}>fetch d</button><div>{data.map((item)=>{<p></p>})}</div>
