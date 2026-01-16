@@ -10,7 +10,18 @@ const Home = () => {
     const [data, setData] = useState([])
     // const [E, setE] = useState(false)
 
-    document.getElementById('D').addEventListener(async(e)=>{ await axios.get(`https://jsonplaceholder.typicode.com/posts/${e.target.value}`)})
+   const deletef = async(id)=> {
+    try{
+        const Ddata = await axios.get(`https://jsonplaceholder.typicode.com/posts/${id}`)
+        const res = Ddata.data
+        const fdata = data.filter((d)=> d.id !== id)
+        setData(fdata)
+    }
+    catch(error){
+        console.error(error.message)
+    } 
+    
+}
 
     const fetchd = async() => {
        try{
@@ -47,7 +58,7 @@ const Home = () => {
     <>
     {/* {sent ? (<p>{M}</p>):(<p>{M}</p>)} */}
     <p>Welcom {RRR}</p>
-    <div style={{display: 'flex', justifyContent: 'center', alignItems: 'center'}}><button onClick={fetchd}>fetch d</button><div id="D" value={item.id}>{data.map((item)=>{return <p key={item.id}>{item.id}</p>})}</div></div>
+    <div style={{display: 'flex', justifyContent: 'center', alignItems: 'center'}}><button onClick={fetchd}>fetch d</button><div id="D">{data.map((item)=>{return <><div key={item.id}><p>{item.id}</p><button onClick={() => deletef(item.id)}></button></div></>})}</div></div>
     <button onClick={fetchd}> fetch d </button>
     </>
   )
