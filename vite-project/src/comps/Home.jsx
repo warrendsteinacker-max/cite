@@ -10,7 +10,7 @@ const Home = () => {
     const [data, setData] = useState([])
     // const [E, setE] = useState(false)
 
-    document.getElementById('D').addEventListener((e)=>{})
+    document.getElementById('D').addEventListener(async(e)=>{ await axios.get(`https://jsonplaceholder.typicode.com/posts/${e.target.value}`)})
 
     const fetchd = async() => {
        try{
