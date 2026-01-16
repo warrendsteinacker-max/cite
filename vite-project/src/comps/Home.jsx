@@ -30,6 +30,7 @@ const Home = () => {
     <p>Welcom {RRR}</p>
     <form onSubmit={Changep}>
         <input type='password' value={pass} onChange={(e)=>setPass(e.target.value)}></input>
+        <button type='submit'>change p</button>
     </form>
     </>
   )
