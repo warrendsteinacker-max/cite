@@ -1,5 +1,8 @@
 import Loginp from './comps/Loginp.jsx'
+import Home from './comps/Home.jsx'
 import {Routes, Route} from 'react-router-dom'
+
+
 
 function App() {
   

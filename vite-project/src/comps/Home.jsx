@@ -6,7 +6,6 @@ const Home = () => {
 
   return (
     <p>Welcom {RRR}</p>
-
   )
 }
 
