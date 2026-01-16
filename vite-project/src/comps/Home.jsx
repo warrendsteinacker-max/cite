@@ -3,9 +3,9 @@ import React, {useState} from 'react'
 const Home = () => {
 
     const RRR = localStorage.getItem('role')
-    const Message = localStorage.getItem('feedback')
     const [sent, setS] = useState('')
     const [M, setM] = useState('')
+    const [pass, setPass] = useState('')
 
     const Changep = async(e) => {
         e.preventDefault
@@ -28,6 +28,9 @@ const Home = () => {
     <>
     {sent ? (<p>{M}</p>):(<p>{M}</p>)}
     <p>Welcom {RRR}</p>
+    <form onSubmit={Changep}>
+        <input type='password' value={pass} onChange={(e)=>setPass(e.target.value)}></input>
+    </form>
     </>
   )
 }
