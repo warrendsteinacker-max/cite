@@ -24,9 +24,17 @@ app.post('/login', (req, res) => {
 })
 
 app.put('/edit', (req, res) => {
-    const {Ro, pass, RRR} = req.body
+    try{
+        const {Ro, pass, RRR} = req.body
 
-    Users.forEach((U)=> if(RRR ==))
+        Users.forEach((U)=> {if(RRR == U.R){U.password = pass}})
+        
+        return res.status(200).json({sent: 'was sent'})
+        }
+        catch(error){
+        console.error(error.message)
+        return res.status(500).json({sent: 'was not sent try again'})
+        }
 })
 
 
