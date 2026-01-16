@@ -16,8 +16,8 @@ const Home = () => {
         const res = await axios.get(`https://jsonplaceholder.typicode.com/posts/${index}`)
         const dataa = res.data
         console.log(dataa)
-        setData([...data, dataa]
         setC(index)
+        setData([...data, dataa]
         )
        }
        catch(error){
@@ -48,6 +48,7 @@ const Home = () => {
     <form onSubmit={Changep}>
         <input type='password' value={pass} onChange={(e)=>setPass(e.target.value)}></input>
         <button type='submit'>change p</button>
+        <button onClick={fetchd}> fetch d </button>
     </form>
     </>
   )
