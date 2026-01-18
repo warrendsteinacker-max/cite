@@ -64,7 +64,7 @@ const Home = () => {
   )
 
 }
-///////////////////////////////
+/////////////////////////////////////
 export default Home
 ////
 /////<div style={{display: flex, justifyContent: center, alignItems: center}}><button onClick={fetchd}>fetch d</button><div>{data.map((item)=>{<p>{item.id}</p>})}</div></div>
